@@ -20,7 +20,7 @@
               </div>
               <div class="col-12">
                 <span v-for="(pro,i) in profiles" :key="i">
-                  <q-btn flat :icon="pro.icon" />
+                  <q-btn flat :icon="pro.icon" type="a" :href="pro.url" target="_blank" />
                 </span>
               </div>
             </div>
