@@ -16,7 +16,8 @@
           <q-btn v-for="(item, i) in menuItems"
                   flat dense
                   :key="i"
-                  class="q-ml-md text-bold">
+                  class="q-ml-md text-bold"
+                  :to="item.value">
             {{item.name}}
           </q-btn>
         </q-toolbar-title>
