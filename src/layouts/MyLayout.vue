@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="bg-grey">
-    <q-header class="transparent">
+  <q-layout view="lHh Lpr lFf">
+    <q-header reveal class="transparent">
       <q-toolbar>
         <q-btn
           v-if="!isPlatformDesktop"
@@ -30,15 +30,16 @@
       bordered
       content-class="bg-grey-2"
     >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+      <q-list class="q-mt-xl">
+        <q-item clickable
+                v-for="(item, i) in menuItems"
+                :key="i">
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon :name="item.icon" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
+            <q-item-label>{{item.name}}</q-item-label>
+            <!--<q-item-label caption>quasar.dev</q-item-label>-->
           </q-item-section>
         </q-item>
       </q-list>
@@ -58,10 +59,10 @@ export default {
     return {
       leftDrawerOpen: false,
       menuItems: [
-        { name: 'About Me', value: 'about' },
-        { name: 'Resume', value: 'resume' },
-        { name: 'Blog', value: 'blog' },
-        { name: 'Contact', value: 'contact' }
+        { name: 'About Me', value: 'about', icon: 'accessibility' },
+        { name: 'Resume', value: 'resume', icon: 'assignment_ind' },
+        { name: 'Blog', value: 'blog', icon: 'chrome_reader_mode' },
+        { name: 'Contact', value: 'contact', icon: 'contact_mail' }
       ]
     }
   },
@@ -70,6 +71,10 @@ export default {
     isPlatformDesktop () {
       return this.$q.platform.is.desktop
     }
+  },
+
+  created () {
+    this.$q.dark.set(true)
   }
 }
 </script>

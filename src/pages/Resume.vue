@@ -1,6 +1,91 @@
 <template>
-  <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
+  <q-page class="flex flex-center" style="font-family: Montserrat;">
+    <div class="row q-gutter-sm q-mb-xl" style="max-width: 1200px">
+      <div class="col-12">
+        <q-card>
+          <q-parallax
+            src="statics/code.jpg"
+            :height="400"
+          />
+          <q-item-section>
+            <div class="row text-center q-gutter-sm q-ma-sm">
+              <div class="col-12">
+                <q-avatar size="200px">
+                  <img src="statics/avatar.png">
+                </q-avatar>
+              </div>
+              <div class="col-12">
+                <div class="text-h4">{{resumeJson.basics.name}}</div>
+                <div class="q-mt-xs">{{resumeJson.basics.summary}}</div>
+              </div>
+              <div class="col-12">
+                <span v-for="(pro,i) in profiles" :key="i">
+                  <q-btn flat :icon="pro.icon" />
+                </span>
+              </div>
+            </div>
+          </q-item-section>
+        </q-card>
+      </div>
+      <div class="col-12">
+        <q-card class="q-pl-md">
+          <q-timeline color="secondary" class="q-pt-md">
+            <q-timeline-entry heading tag="h3">
+              Working History
+            </q-timeline-entry>
+
+            <q-timeline-entry
+              v-for="(work, i) in workHistoryList"
+              :key="i"
+              :title="work.position"
+              :subtitle="work.startDate"
+            >
+              <div>
+                <div class="text-italic">{{work.company}}</div>
+                <div class="q-mt-md">{{work.summary}}</div>
+                <div>
+                  <q-list dense>
+                    <q-item v-for="(hl,i) in work.highlights" :key="i" clickable>
+                      <q-item-section>{{hl}}</q-item-section>
+                    </q-item>
+                  </q-list>
+                </div>
+              </div>
+            </q-timeline-entry>
+          </q-timeline>
+        </q-card>
+      </div>
+      <div class="col-12">
+        <q-card class="q-pa-md">
+          <q-item-section>
+            <div class="text-h3 q-mb-md">Publications</div>
+            <q-list>
+              <q-item v-for="(pub,i) in resumeJson.publications" :key="i" clickable>
+                <q-item-section>
+                  <q-item-label>{{pub.name}}</q-item-label>
+                  <q-item-label caption><span>{{pub.publisher}}, {{pub.releaseDate}}</span></q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-item-section>
+        </q-card>
+      </div>
+      <div class="col-12 q-pt-sm">
+        <q-card class="q-pa-md">
+          <q-item-section>
+            <div class="text-h3 q-mb-md">Patents</div>
+            <q-list>
+              <q-item v-for="(pat,i) in resumeJson.patents" :key="i" clickable>
+                <q-item-section>
+                  <q-item-label>{{pat.name}}</q-item-label>
+                  <q-item-label caption><span>{{pat.applicationNo}}, {{pat.status}}</span></q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-item-section>
+        </q-card>
+      </div>
+    </div>
   </q-page>
 </template>
 
@@ -8,7 +93,7 @@
 export default {
   name: 'Resume',
 
-  data (){
+  data () {
     return {
       resumeJson: {
         'basics': {
@@ -28,16 +113,19 @@ export default {
           },
           'profiles': [{
             'network': 'medium',
+            'icon': 'fab fa-medium',
             'username': 'yahyacivelek',
             'url': 'https://medium.com/@yahyacivelek'
           },
           {
             'network': 'linkedin',
+            'icon': 'fab fa-linkedin',
             'username': 'yahyacivelek',
             'url': 'https://www.linkedin.com/in/yahya-civelek/'
           },
           {
             'network': 'github',
+            'icon': 'fab fa-github-square',
             'username': 'yahyacivelek',
             'url': 'https://github.com/yahyacivelek'
           }
@@ -169,6 +257,11 @@ export default {
           'website': '',
           'summary': ''
         }],
+        'patents': [{
+          'name': 'Enerji Tüketimi Tahmini ve Kaçak Enerji Kullanımının Lokalizasyonu (Predictingfraud location in low-voltage power networks)',
+          'applicationNo': '2018/06279',
+          'status': 'Pending'
+        }],
         'skills': [{
           'name': '',
           'level': 'Master',
@@ -195,6 +288,23 @@ export default {
         }]
       }
     }
+  },
+
+  computed: {
+    workHistoryList () {
+      return this.resumeJson.work.slice().reverse()
+    },
+
+    profiles () {
+      return this.resumeJson.basics.profiles
+    }
   }
 }
 </script>
+
+<style scoped>
+  .my-card {
+    width: 100%;
+    max-width: 500px;
+  }
+</style>
