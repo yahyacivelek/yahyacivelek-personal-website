@@ -1,6 +1,10 @@
 
 
-### **1. Tecrit Altında Çalışmayın**
+## **1. Tecrit Altında Çalışmayın**
+
+<div class="q-mb-lg text-center">
+  <img src="../statics/isolation.jpg" />
+</div>
 
 Tecrit sizin en büyük düşmanınızdır!
 
@@ -24,7 +28,11 @@ Tecrit altında çalışırken mahrum olacağınız kazanımlar şöyle sıralan
 
 Tecrit altında çalışmanın size tek faydası kimse size karışmadan istediğiniz yeni teknolojiyi denemenize olanak tanımasıdır. Bunun dışında geçirilen zaman size külliyen zarardır, özellikle yeterli öz disipline sahip değilseniz.
 
-### **2. En iyi uygulamaları (best practices) bulun**
+## **2. En iyi uygulamaları (best practices) bulun**
+
+<div class="q-mb-lg text-center">
+  <img src="../statics/best-practice.jpg" />
+</div>
 
 Her ne kadar gömülü yazılım özelinde en iyi uygulamalara ulaşmak nispeten daha zor olsa da, eskisine nazaran çok daha kolay olduğunu söylemek yanlış olmaz sanırım.
 
@@ -36,7 +44,11 @@ Olmadı stackoverflow.com ne güne duruyor.
 
 Hatta cüzi bir ücret vererek dünyada bu işi en iyi yapan kişilerden mentorluk bile alabilirsiniz (codementor.io)
 
-### **3. Kod yazmayı erteleyin**
+## **3. Kod yazmayı erteleyin**
+
+<div class="q-mb-lg text-center">
+  <img src="../statics/stop-coding.jpg" />
+</div>
 
 Biliyorum...
 
@@ -50,7 +62,7 @@ Gereksinimleri tam olarak belirlemeden, mimariyi ve tasarımı tam olarak oluşt
 
 Hatta kod yazarken bile kod yazmayı erteleyin. Örneğin bir değişkene isim mi vereceksiniz. Bu vereceğiniz ismi başka kişilerin veya sizin gelecekteki versiyonunuzun da okuyup anlaması gerektiğini unutmayın. Düşünmeye daha fazla zaman ayırın, aynı durumdaki diğer geliştiricilerin nasıl isimlendirme yaptığını araştırın, öyle verin ismi.
 
-### **4. Yazılımcı mısınız yoksa donanımcı mı? Kara Verin!**
+## **4. Yazılımcı mısınız yoksa donanımcı mı? Kara Verin!**
 
 Bu durum bizim mesleğe has bir durum...
 
@@ -68,7 +80,7 @@ Bundan dolayı eğer imkanınız varsa, dahi falan değilseniz ve uzmanlaşmak i
 
 Mesleğe çok uzak olmayan farklı kaynaklardan beslenin. Sorunların çözümlerine farklı açılardan yaklaşmanızı ve yenilikçi yöntemler geliştirmenizi sağlar.
 
-### **5. Çalışan koda dokunma**
+## **5. Çalışan koda dokunma**
 
 Kendinden önceki yazılımcıyı eleştirmeyen yazılımcı hiç gördünüz mü bilmiyorum ama ben daha önce hiç böyle biriyle müşerref olmadım.
 
@@ -86,7 +98,7 @@ Bu "refactoring" denilen durum düşündüğünüzden çok daha ciddi bir iş.
 
 Öncesinde planlanmalı, testler tasarlanmalı ve tek satır değiştirmeden 40 defa düşünülmeli. Aksi takdirde istenmeyen sonuçlar doğurması kuvvetle muhtemel.
 
-### **6. Bir version kontrol sistemi (VCS) öğrenin ve aktif kullanın**
+## **6. Bir version kontrol sistemi (VCS) öğrenin ve aktif kullanın**
 <div style="text-align:center">
   <img src="https://git-scm.com/images/logo@2x.png" />
 </div>
