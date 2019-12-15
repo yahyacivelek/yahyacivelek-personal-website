@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex flex-center" style="font-family: Montserrat;">
-    <q-markdown :is="markdown" :src="markdownn" />
+  <q-page class="inner-page q-pa-md">
+    <q-markdown :src="markdown" />
   </q-page>
 </template>
 
@@ -12,20 +12,27 @@ import { QMarkdown } from '@quasar/quasar-ui-qmarkdown'
 export default {
   data () {
     return {
-      markdownn: `../statics/posts/${this.$route.params.name}`
+      markdown: ''
     }
   },
-  computed: {
-    markdown () {
-      return () => import(`../statics/posts/${this.$route.params.name}`)
-    }
-  },
+
   components: {
     QMarkdown
+  },
+
+  created () {
+    import(`../statics/posts/${this.$route.params.name}`)
+      .then(res => {
+        this.markdown = res.default
+      })
   }
 }
 </script>
 
 <style scoped>
-
+  .inner-page {
+      font-family: Montserrat;
+      max-width: 1000px;
+      margin: auto;
+    }
 </style>
