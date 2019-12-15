@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center" style="font-family: Montserrat;">
     <q-markdown :src="markdown" />
   </q-page>
 </template>
