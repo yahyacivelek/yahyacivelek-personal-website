@@ -22,7 +22,7 @@ export default {
     return {
       posts: [
         { name: 'tavsiyeler.md', label: '10+ Yıllık Gömülü Yazılımcıdan 10+ Tavsiye', date: '15 Aralık 2019' },
-        { name: 'deneme.md', label: 'Deneme', date: '15 Ocak 2020' }
+        { name: 'carrier-tips.md', label: '9 Carrier Tips for Embedded Software Developers', date: '28 Aralık 2019' }
       ]
     }
   }
